@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body { background: #ffe6f2; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: sans-serif; text-align: center; }
+        .box { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); width: 85%; }
+        img { width: 100%; border-radius: 15px; border: 2px solid #ff4d94; margin-bottom: 15px; }
+        h1 { color: #ff4d94; font-size: 20px; }
+        button { padding: 12px 20px; border-radius: 10px; border: none; font-size: 16px; margin: 5px; }
+        #yes { background: #ff4d94; color: white; }
+        #no { background: #ccc; position: absolute; }
+    </style>
+</head>
+<body>
+    <div class="box">
+         
+: <img src="20260208_231057.jpg"
+       <h1 id="t">Will you be my Galentine? 💖</h1>
+        <button id="yes" onclick="win()">YES!</button>
+        <button id="no">No</button>
+    </div>
+    <script>
+        const n = document.getElementById('no');
+        n.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            n.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            n.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+        });
+        function win() {
+            document.getElementById('t').innerHTML = "Yay! It's a Date! 🥳";
+            n.style.display = 'none';
+            confetti();
+        }
+    </script>
+</body>
+</html>
